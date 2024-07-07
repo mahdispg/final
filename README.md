@@ -53,3 +53,17 @@ from project import models , schemas: مدل‌ها و اسکیماهای پرو
 
 تابع removecourse:
 این تابع یک شناسه درس (Course_id) را می‌گیرد و درس مربوطه را از پایگاه داده حذف می‌کند.
+
+توضیح database.py:
+این کد تنظیمات ابتدایی برای اتصال به پایگاه داده SQLite و ایجاد نشست‌های پایگاه داده با استفاده از SQLAlchemy را نشان می‌دهد. در اینجا توضیح خط به خط این کد آمده است:
+وارد کردن ماژول‌ها:
+from sqlalchemy import create_engine: تابع create_engine را از SQLAlchemy وارد می‌کند که برای ایجاد یک اتصال به پایگاه داده استفاده می‌شود.
+from sqlalchemy.ext.declarative import declarative_base: تابع declarative_base را وارد می‌کند که برای تعریف مدل‌های پایگاه داده استفاده می‌شود.
+from sqlalchemy.orm import sessionmaker: کلاس sessionmaker را وارد می‌کند که برای ایجاد نشست‌های پایگاه داده استفاده می‌شود.
+
+تعریف آدرس پایگاه داده:
+SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
+این خط آدرس پایگاه داده را تعیین می‌کند. در اینجا، یک پایگاه داده SQLite با نام sql_app.db در دایرکتوری فعلی ایجاد یا استفاده می‌شود.
+"sqlite:///./sql_app.db":
+sqlite:///: نشان‌دهنده این است که از SQLite به عنوان پایگاه داده استفاده می‌شود.
+./sql_app.db: مسیر فایل پایگاه داده که در دایرکتوری فعلی قرار دارد.
